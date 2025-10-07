@@ -23,6 +23,8 @@ ACollectable::ACollectable()
 	Mesh->SetupAttachment(RootComponent);
 	Mesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
+
+}
 	void ACollectable::NotifyActorBeginOverlap(AActor* OtherActor)
 	{
 		Super::NotifyActorBeginOverlap(OtherActor);
@@ -32,19 +34,10 @@ ACollectable::ACollectable()
 
 		Destroy();
 	}
-}
-
 // Called when the game starts or when spawned
 void ACollectable::BeginPlay()
 {
 	Super::BeginPlay();
 	
-}
-
-// Called every frame
-void ACollectable::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
 }
 
