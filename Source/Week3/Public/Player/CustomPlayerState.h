@@ -17,4 +17,13 @@ class WEEK3_API ACustomPlayerState : public APlayerState
 	
 public:
 	ACustomPlayerState();
+
+	UFUNCTION(BlueprintCallable)
+	int32 GetScoreValue() const;
+
+	UFUNCTION()
+	void AddScoreValue(int32 amount);
+
+protected:
+	int32 CurrentScore;
 };
