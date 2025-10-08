@@ -17,8 +17,33 @@ class WEEK3_API ACustomGameMode : public AGameModeBase
 public:
 	ACustomGameMode();
 
-	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
-	virtual void InitGameState() override;
+	void HandleCollected(class ACollectable* Collected, class APawn* CollectorPawn);
+
+protected:
+	virtual void BeginPlay() override;
 	virtual void PostLogin(APlayerController* NewPlayer) override;
-	virtual void StartPlay() override;
+
+	UPROPERTY()
+	int32 ScoreToWin;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<class ACollectable> CollectableClass;
+
+	UPROPERTY()
+	TArray<class ACollectableSpawnPoint*> SpawnPoints;
+
+	int32 LastSpawnIndex;
+
+	bool bGameOver;
+
+	void SpawnCollectableAtRandomPoint();
+
+	void EndGame();
+
+	void GatherSpawnPoints();
+
+	//virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
+	//virtual void InitGameState() override;
+	//virtual void PostLogin(APlayerController* NewPlayer) override;
+	//virtual void StartPlay() override;
 };
