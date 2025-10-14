@@ -21,7 +21,6 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-	virtual void PostLogin(APlayerController* NewPlayer) override;
 
 	UPROPERTY()
 	int32 ScoreToWin;

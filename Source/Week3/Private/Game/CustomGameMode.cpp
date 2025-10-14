@@ -120,13 +120,7 @@ void ACustomGameMode::HandleCollected(class ACollectable* Collected, class APawn
 //	UE_LOG(LogTemp, Warning, TEXT("[GameMode::InitGameState]"));
 //}
 //
-//void ACustomGameMode::PostLogin(APlayerController* NewPlayer)
-//{
-//	Super::PostLogin(NewPlayer);
-//
-//	UE_LOG(LogTemp, Warning, TEXT("[GameMode::PostLogin] New player controller joined: %s"),
-//		*GetNameSafe(NewPlayer));
-//}
+
 //
 //void ACustomGameMode::StartPlay()
 //{
