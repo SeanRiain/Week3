@@ -14,7 +14,9 @@
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/PlayerController.h"
 #include "Engine/Engine.h"
-#include "Engine/Utils.h"
+//#include "Engine/Utils.h"
+#include <EngineUtils.h>
+
 
 
 ACustomGameMode::ACustomGameMode()
@@ -76,7 +78,7 @@ void ACustomGameMode::SpawnCollectableAtRandomPoint()
 	LastSpawnIndex = NewIndex;
 
 	FTransform Xform = Chosen->GetActorTransform();
-	GetWorld()->SpawnActor<ACollectable>(CollectableClass, XForm);
+	GetWorld()->SpawnActor<ACollectable>(CollectableClass, Xform);
 }
 
 void ACustomGameMode::EndGame()

@@ -32,7 +32,14 @@ ACollectable::ACollectable()
 		APawn* OverLappingPawn = Cast<APawn>(OtherActor);
 		if (!OverLappingPawn) return;
 
-		Destroy();
+		//Authority (GameMode) decides wheter to award score and where to respawn
+		if (UWorld* World = GetWorld())
+		{
+			if (ACustomGameMode* GM = World->GetAuthGameMode<ACustomGameMode>())
+			{
+				GM->HandleCollected(this, OverLappingPawn);
+			}
+		}
 	}
 // Called when the game starts or when spawned
 void ACollectable::BeginPlay()
