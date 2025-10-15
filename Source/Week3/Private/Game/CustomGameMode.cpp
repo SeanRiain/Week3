@@ -102,6 +102,14 @@ void ACustomGameMode::HandleCollected(class ACollectable* Collected, class APawn
 		{
 			PS->AddScoreValue(1);
 			Collected->Destroy();
+
+			if (PS->GetScoreValue() >= ScoreToWin) 
+				//If the method to detect the score value is detecting a value bigger that the score we've decided is the "score needed to win"
+				//run the method to end the game
+			{
+				EndGame();
+			}
+
 			SpawnCollectableAtRandomPoint();
 		}
 	}

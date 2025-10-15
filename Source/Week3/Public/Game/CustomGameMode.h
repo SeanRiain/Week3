@@ -22,7 +22,7 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-	UPROPERTY()
+	UPROPERTY(EditDefaultsOnly)
 	int32 ScoreToWin;
 
 	UPROPERTY(EditDefaultsOnly)
